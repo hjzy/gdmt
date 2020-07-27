@@ -1,4 +1,4 @@
-package xyz.hjzy.gdmt;
+package com.train.gdmt;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
