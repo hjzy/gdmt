@@ -24,7 +24,7 @@ public class UserDaoTest {
     @Test
     public void getUserTest(){
 
-        User user = userDao.getUser("jerry");
+        User user = userDao.getUser("张飞");
         System.out.println(user);
         assertThat(user).isNotNull();
 
