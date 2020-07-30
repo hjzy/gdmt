@@ -9,7 +9,7 @@ import java.util.Date;
  * @Date: 2020/7/27 10:10
  */
 
-@Data
+@Data//自动生成set和get方法
 public class User {
 
     private int id;

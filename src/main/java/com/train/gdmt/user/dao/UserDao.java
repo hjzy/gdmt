@@ -12,12 +12,12 @@ import org.springframework.stereotype.Repository;
 
 
 
-@Mapper
-@Repository
+@Mapper//表示mybatis中负责实体和sql映射的类
+@Repository//注册userdao作为一个bean
 public interface UserDao {
 
 
-    @Select("select * from User where User_Name=#{username}")
+    @Select("select * from User where username=#{username}")
     public User getUser(String username);
 
 
