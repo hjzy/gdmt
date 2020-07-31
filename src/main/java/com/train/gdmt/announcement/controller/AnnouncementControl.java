@@ -29,7 +29,7 @@ public class AnnouncementControl {
     public String findAllAnnouncements(HttpServletRequest request, HttpServletResponse response)
     {
         List<Announcement> announcementList =announcementService.findAllAnnouncements();
-        request.setAttribute("announcement","announcementList");
+        request.setAttribute("announcement",announcementList);
         return "Announcement-Admin";
     }
 
