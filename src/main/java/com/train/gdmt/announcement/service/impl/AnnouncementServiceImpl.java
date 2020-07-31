@@ -30,5 +30,9 @@ public class AnnouncementServiceImpl implements AnnouncementService {
         return announcementDao.deleteAnnouncement(announceNum);
     }
 
+    @Override
+    public void addAnnouncement(Announcement announcement){
+announcementDao.addAnnouncement(announcement);
+ }
 
 }

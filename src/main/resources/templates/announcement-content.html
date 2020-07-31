@@ -356,12 +356,12 @@ Template Name: Marvin
             <div class="row">
                 <div class="col-xl-12">
                     <section class="hk-sec-wrapper">
-                        <h5 class="hk-sec-title">关于平台400客服电话切割影响的通知</h5>
-                        <p>尊敬的用户：</p>
+                        <h5 th:text="${announcement.announceTitle}" class="hk-sec-title"></h5>
+                        <p th:text="${announcement.announceTime}"></p>
 
-                            <p>    平台客服电话（400-020-8000）近期服务提供商切割固话绑定，受此影响，近段时间（预计一周内）会出现“拨打不通”或“无人接听”的现象。如遇以上情况，请拨打以下移动电话：15011089832、15998566296、18001608270。</p>
+                            <p th:text="${announcement.announceContent}"></p>
                      
-                           <p> 给您带来的不便，敬请谅解。</p>
+                           <p> </p>
                     </section>
                 </div>
             </div>

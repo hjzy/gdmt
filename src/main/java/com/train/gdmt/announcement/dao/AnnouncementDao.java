@@ -2,6 +2,7 @@ package com.train.gdmt.announcement.dao;
 
 import com.train.gdmt.announcement.model.Announcement;
 import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
@@ -20,7 +21,7 @@ import java.util.List;
 public interface AnnouncementDao {
 
 
-    @Select("select * from Announcement where announce_Title=#{announceNum}")
+    @Select("select * from Announcement where announce_Num=#{announceNum}")
     Announcement getAnnouncement(String announceNum);
 
     @Select("select * from Announcement")
@@ -28,4 +29,8 @@ public interface AnnouncementDao {
 
     @Delete("delete from Announcement where announce_Num=#{announceNum}")
     int deleteAnnouncement(String announceNum);
+    @Insert("INSERT INTO Announcement (Announce_Title ,  Announce_Time , Announce_Content ) " +
+            "VALUES (#{announceTitle},#{announceTime},#{announceContent})")
+    public  void addAnnouncement(Announcement announcement);
+
 }

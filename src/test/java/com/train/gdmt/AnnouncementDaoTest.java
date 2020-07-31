@@ -38,7 +38,7 @@ public class AnnouncementDaoTest {
      */
 
 
-    @Test
+    //@Test
     public void getAnnouncementTest() {
 
         Announcement announcement = announcementDao.getAnnouncement("公告");
@@ -49,9 +49,13 @@ public class AnnouncementDaoTest {
     }
 
     @Test
-    public void getAnnouncementsTest() {
-        List<Announcement> announcements = announcementDao.getAllAnnouncement();
-        assertThat(announcements.size()).isEqualTo(1);
+    public void insert() {
+        Announcement announcement = new Announcement();
+        announcement.setAnnounceTime("2020-8-1");
+        announcement.setAnnounceTitle("love");
+        announcement.setAnnounceContent("这是一个测试公告");
+        announcementDao.addAnnouncement(announcement);
+        //System.out.println(announcementDao.getAllAnnouncement());
     }
 
 }
