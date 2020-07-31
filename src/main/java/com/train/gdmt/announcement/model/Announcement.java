@@ -14,6 +14,11 @@ public class Announcement {
        private String announceTitle;
        private String announceTime;
        private String announceContent;
+       private String  annoUrl;
 
+       public String getAnnoUrl() {
+              annoUrl="http://localhost:8081/announcement/view?num="+announceNum;
+              return annoUrl;
+       }
 }
 

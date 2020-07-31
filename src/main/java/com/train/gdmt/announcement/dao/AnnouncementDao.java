@@ -19,8 +19,8 @@ import java.util.List;
 public interface AnnouncementDao {
 
 
-    @Select("select * from Announcement where announce_Title=#{announceTitle}")
-    Announcement getAnnouncement(String announceTitle);
+    @Select("select * from Announcement where announce_Title=#{announceNum}")
+    Announcement getAnnouncement(String announceNum);
 
     @Select("select * from Announcement")
     List<Announcement> getAllAnnouncement();

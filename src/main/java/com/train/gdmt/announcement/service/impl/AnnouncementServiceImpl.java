@@ -15,12 +15,19 @@ public class AnnouncementServiceImpl implements AnnouncementService {
     private AnnouncementDao announcementDao;
 
     @Override
-    public Announcement login(String announceTitle) {
-        return announcementDao.getAnnouncement(announceTitle);
+    public Announcement getAnnouncement(String announceNum) {
+
+        return announcementDao.getAnnouncement(announceNum);
     }
 
     @Override
     public List<Announcement> findAllAnnouncements() {
         return announcementDao.getAllAnnouncement();
     }
+
+//    @Override
+//    public List<Announcement> viewAnnouncements() {
+//        return announcementDao.viewAnnouncement();
+//    }
+
 }

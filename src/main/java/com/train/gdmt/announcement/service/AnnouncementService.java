@@ -6,6 +6,6 @@ import java.util.List;
 
 
 public interface AnnouncementService {
-    Announcement login(String username);
+    Announcement getAnnouncement(String announceNum);
     List<Announcement> findAllAnnouncements();
 }

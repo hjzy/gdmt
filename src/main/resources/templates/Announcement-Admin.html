@@ -385,7 +385,7 @@ Template Name: Marvin
                                                 <td th:text="${anno.announceTime}"></td>
                                                 <td th:text="${anno.announceNum}"></td>
                                                 <td>
-                                                    <a href="#" class="mr-25" data-toggle="tooltip" data-original-title="Edit"> <i class="icon-pencil"></i> </a>
+                                                    <a th:href="${anno.annoUrl}" class="mr-25" data-toggle="tooltip" data-original-title="Edit"> <i class="icon-pencil"></i> </a>
                                                     <a href="#" data-toggle="tooltip" data-original-title="Close"> <i class="icon-trash txt-danger"></i> </a>
                                                 </td>
                                             </tr>

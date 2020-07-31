@@ -33,6 +33,16 @@ public class AnnouncementControl {
         return "Announcement-Admin";
     }
 
+    @RequestMapping("view")
+    public String viewAnnouncement(HttpServletRequest request,HttpServletResponse response)
+
+    {
+        String announceNum=request.getParameter("num");
+        Announcement viewAnnouncement = announcementService.getAnnouncement(announceNum);
+        List<Announcement> announcementList =announcementService.findAllAnnouncements();
+        request.setAttribute("announcement",viewAnnouncement);
+        return "announcement-content";
+    }
 
 
     @RequestMapping("toLogin")
