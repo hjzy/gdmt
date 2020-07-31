@@ -1,6 +1,7 @@
 package com.train.gdmt.announcement.dao;
 
 import com.train.gdmt.announcement.model.Announcement;
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
@@ -25,5 +26,6 @@ public interface AnnouncementDao {
     @Select("select * from Announcement")
     List<Announcement> getAllAnnouncement();
 
-
+    @Delete("delete from Announcement where announce_Num=#{announceNum}")
+    int deleteAnnouncement(String announceNum);
 }

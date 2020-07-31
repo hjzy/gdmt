@@ -25,9 +25,10 @@ public class AnnouncementServiceImpl implements AnnouncementService {
         return announcementDao.getAllAnnouncement();
     }
 
-//    @Override
-//    public List<Announcement> viewAnnouncements() {
-//        return announcementDao.viewAnnouncement();
-//    }
+    @Override
+    public int deleteAnnouncements(String announceNum) {
+        return announcementDao.deleteAnnouncement(announceNum);
+    }
+
 
 }

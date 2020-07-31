@@ -44,6 +44,14 @@ public class AnnouncementControl {
         return "announcement-content";
     }
 
+    @RequestMapping("delete")
+   public String deleteAnnouncement(HttpServletRequest request,HttpServletResponse response)
+
+{
+    String announceNum=request.getParameter("num");
+    int returnid=announcementService.deleteAnnouncements(announceNum);
+    return "Announcement-Admin";
+}
 
     @RequestMapping("toLogin")
     public String toLogin() {

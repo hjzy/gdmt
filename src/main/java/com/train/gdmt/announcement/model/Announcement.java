@@ -14,11 +14,17 @@ public class Announcement {
        private String announceTitle;
        private String announceTime;
        private String announceContent;
-       private String  annoUrl;
+       private String  annoviewUrl;
+       private String annodeleteUrl;
 
-       public String getAnnoUrl() {
-              annoUrl="http://localhost:8081/announcement/view?num="+announceNum;
-              return annoUrl;
+       public String getAnnoviewUrl() {
+              annoviewUrl="http://localhost:8081/announcement/view?num="+announceNum;
+              return annoviewUrl;
+       }
+
+       public String getAnnodeleteUrl() {
+              annodeleteUrl="http://localhost:8081/announcement/delete?num="+announceNum;
+              return annodeleteUrl;
        }
 }
 
