@@ -34,36 +34,31 @@ public class UserControl {
         System.out.println(DigestUtils.md5Hex(loginUser.getPwd()));
 
 
-        if(loginUser == null){
-//demo
-            return "login";
-        }else{
-            if(DigestUtils.md5Hex(password).equals(DigestUtils.md5Hex(loginUser.getPwd())))
-            {
-                session.setAttribute("loginUser",loginUser);
-                switch (loginUser.getRole().toString()){
-                    //1：燃料业务员 2：监察人员 3：管理人员 4：系统管理员 5：公告发布员',
-                    case "1":
+        if(DigestUtils.md5Hex(password).equals(DigestUtils.md5Hex(loginUser.getPwd())))
+        {
+            session.setAttribute("loginUser",loginUser);
+            switch (loginUser.getRole().toString()){
+                // 1：监察人员 2：管理人员 3：系统管理员 4：公告发布员',
+                case "1":
 
-                        return "index";
-                    case "2":
-                    case "3":
-                        return "index";
-                    case "4":
-                        LOGGER.info("管理员登录成功！");
-                        return "admin/admin-index";
-                    case "5":
-                        return "index";
+                    return "index";
+                case "2":
+                case "3":
+                    LOGGER.info("管理员登录成功！");
+                    return "admin/admin-index";
+                case "4":
+                    return "redirect:/announcement/findAllAnnouncement";
+                case "5":
 
 
-                }
+
             }
-            else {
-                request.setAttribute("loginerror","用户名和密码错误");
-                return "login-simple";
-            }
-           // request.setAttribute("loginerror","用户名和密码错误");
         }
+        else {
+            request.setAttribute("loginerror","用户名和密码错误");
+            return "login-simple";
+        }
+        // request.setAttribute("loginerror","用户名和密码错误");
         return "login";
     }
 }
