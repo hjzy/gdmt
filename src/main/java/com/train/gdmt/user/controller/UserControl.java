@@ -3,6 +3,7 @@ package com.train.gdmt.user.controller;
 
 import com.train.gdmt.user.model.User;
 import com.train.gdmt.user.service.UserService;
+import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -28,15 +29,16 @@ public class UserControl {
 
     @RequestMapping("doLogin")
     public String doLogin(String username, String password, HttpSession session, HttpServletRequest request){
-        System.out.println("userName"+username);
-        System.out.println("pwd"+password);
+        System.out.println(DigestUtils.md5Hex(password));
         User loginUser=userService.login(username);
+        System.out.println(DigestUtils.md5Hex(loginUser.getPwd()));
+
 
         if(loginUser == null){
 //demo
             return "login";
         }else{
-            if(password.equals(loginUser.getPwd()))
+            if(DigestUtils.md5Hex(password).equals(DigestUtils.md5Hex(loginUser.getPwd())))
             {
                 session.setAttribute("loginUser",loginUser);
                 switch (loginUser.getRole().toString()){
