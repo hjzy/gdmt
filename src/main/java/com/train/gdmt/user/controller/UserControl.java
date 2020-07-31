@@ -11,6 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class UserControl {
     @RequestMapping("toLogin")
     public String toLogin(){
-        return "login-simple";
+        return "login";
     }
 }
