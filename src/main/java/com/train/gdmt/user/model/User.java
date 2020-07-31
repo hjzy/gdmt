@@ -14,7 +14,7 @@ public class User {
 
     private int id;
     private String userId;
-    private String password;
+    private String pwd;
     private String userName;
     private String email;
     private String units;
