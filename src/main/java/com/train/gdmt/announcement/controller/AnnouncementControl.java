@@ -65,7 +65,7 @@ public class AnnouncementControl {
 
         }*/
         announcementService.addAnnouncement(announcement);
-        request.setAttribute("message","添加用户成功！");
+        request.setAttribute("message","添加公告成功！");
         //return "Announcement-Admin";
         return "redirect:/announcement/findAllAnnouncement";
     }

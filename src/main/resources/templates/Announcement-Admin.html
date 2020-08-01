@@ -370,7 +370,7 @@ Template Name: Marvin
                             <button class="btn btn-primary" onclick="window.location.href('http://localhost:8081/announcement/toAdd')">新增公告</button>
                         </div>
                         <div class="alert alert-inv alert-inv-primary" role="alert">
-                            <a  href="http://localhost:8081/announcement/toAdd"> This is a primary alert—check it out!</a>
+                            <a  href="http://localhost:8081/announcement/toAdd"> 新增公告</a>
                         </div>
                         <div class="row">
                             <div class="col-sm">
@@ -382,12 +382,14 @@ Template Name: Marvin
                                             <tr>
                                                 <th>公告标题</th>
                                                 <th>时间</th>
-                                                <th>love</th>
+                                                <th>序号</th>
                                                 <th>Action</th>
 
                                             </tr>
                                             </thead>
                                             <tbody>
+
+
                                             <tr th:each="anno:${announcement}">
                                                 <td th:text="${anno.announceTitle}"></td>
                                                 <td th:text="${anno.announceTime}"></td>
