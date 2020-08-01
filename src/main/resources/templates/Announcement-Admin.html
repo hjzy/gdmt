@@ -367,10 +367,8 @@ Template Name: Marvin
 
                         <div style="text-align:right">
 
-                            <button class="btn btn-primary" onclick="window.location.href('http://localhost:8081/announcement/toAdd')">新增公告</button>
-                        </div>
-                        <div class="alert alert-inv alert-inv-primary" role="alert">
-                            <a  href="http://localhost:8081/announcement/toAdd"> 新增公告</a>
+                            <a th:href="${addUrl}" class="mr-25" data-toggle="tooltip" data-original-title="Edit">  <i class="ion ion-md-add font-24"></i> </a>
+
                         </div>
                         <div class="row">
                             <div class="col-sm">

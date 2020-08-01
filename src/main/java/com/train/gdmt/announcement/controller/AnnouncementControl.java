@@ -49,7 +49,7 @@ public class AnnouncementControl {
     public String deleteAnnouncement(HttpServletRequest request, HttpServletResponse response) {
         String announceNum = request.getParameter("num");
         int returnid = announcementService.deleteAnnouncements(announceNum);
-        return "redirect:/announcement/findAllAnnouncement";
+        return "redirect:/announcement/page";
     }
 
     @RequestMapping("toAdd")
@@ -88,10 +88,10 @@ public class AnnouncementControl {
         //model.addAttribute("sdj1",sdj1);
         model.addAttribute("pageInfo", pageInfo);
 
-        //model.addAttribute("billStatus","0");
+        model.addAttribute("addUrl","http://localhost:8081/announcement/toAdd");
         //获取当前页
         model.addAttribute("pageNum", pageNum);
-        //获取一页显示的条数
+        //获取一页显示的条
         model.addAttribute("pageSize", pageSize);
         //是否为第一页
         model.addAttribute("isFirstPage", pageInfo.isIsFirstPage());
@@ -112,6 +112,6 @@ public class AnnouncementControl {
         announcementService.addAnnouncement(announcement);
         request.setAttribute("message", "添加公告成功！");
         //return "Announcement-Admin";
-        return "redirect:/announcement/findAllAnnouncement";
+        return "redirect:/announcement/page";
     }
 }
