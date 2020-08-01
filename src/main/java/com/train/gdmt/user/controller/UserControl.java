@@ -47,7 +47,8 @@ public class UserControl {
                     LOGGER.info("管理员登录成功！");
                     return "index";
                 case "4":
-                    return "redirect:/announcement/findAllAnnouncement";
+                  //  return "redirect:/announcement/findAllAnnouncement";
+                    return "redirect:/announcement/page";
                 case "5":
 
 

@@ -38,17 +38,17 @@ public class AnnouncementDaoTest {
      */
 
 
-    //@Test
+    @Test
     public void getAnnouncementTest() {
 
-        Announcement announcement = announcementDao.getAnnouncement("公告");
+        List<Announcement> announcement = announcementDao.getAllAnnouncement();
         System.out.println(announcement);
         assertThat(announcement).isNotNull();
 
 
     }
 
-    @Test
+    //@Test
     public void insert() {
         Announcement announcement = new Announcement();
         announcement.setAnnounceTime("2020-8-1");

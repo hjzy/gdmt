@@ -390,7 +390,7 @@ Template Name: Marvin
                                             <tbody>
 
 
-                                            <tr th:each="anno:${announcement}">
+                                            <tr th:each="anno:${pageInfo.list}">
                                                 <td th:text="${anno.announceTitle}"></td>
                                                 <td th:text="${anno.announceTime}"></td>
                                                 <td th:text="${anno.announceNum}"></td>
@@ -400,30 +400,41 @@ Template Name: Marvin
                                                 </td>
                                             </tr>
 
-<!--                                            <tr>
-                                                <td>Dream successful plan</td>
-                                                <td>July 1, 2015</td>
-                                                <td>love</td>
-                                                <td>
-                                                    <a href="#" class="mr-25" data-toggle="tooltip" data-original-title="Edit"> <i class="icon-pencil"></i> </a>
-                                                    <a href="#" data-toggle="tooltip" data-original-title="Close"> <i class="icon-trash txt-danger"></i> </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Office automatization</td>
-                                                <td>Apr 12, 2015</td>
-                                                <td>love</td>
-                                                <td>
-                                                    <a href="#" class="mr-25" data-toggle="tooltip" data-original-title="Edit"> <i class="icon-pencil"></i> </a>
-                                                    <a href="#" data-toggle="tooltip" data-original-title="Close"> <i class="icon-trash txt-danger"></i> </a>
-                                                </td>
-                                            </tr>-->
                                             </tbody>
                                         </table>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <form action="/announcement/page" method="post">
+                            <nav class="pagination-wrap  justify-content-center mb-25 mt-10" aria-label="Page navigation example" style="text-align: center">
+                                <ul class="pagination">
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" tabindex="-1"
+                                           th:if="${not isFirstPage}"
+                                           th:href="@{/announcement/page(pageNum=${pageNum - 1}, pageSize=${pageSize})}">&lt;</a>
+                                    </li>
+                                    <li class="page-item" th:each="pageNo:${#numbers.sequence(1,totalPages)}">
+                                        <a class="page-link" th:if="${pageNum eq pageNo}"
+                                           th:text="${pageNo}"></a>
+                                        <a class="page-link" th:if="${pageNum ne pageNo}"
+                                           th:text="${pageNo}"
+                                           th:href="@{/announcement/page(pageNum=${pageNo}, pageSize=${pageSize})}"></a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" tabindex="-1"
+                                           th:if="${not isLastPage}"
+                                           th:href="@{/announcement/page(pageNum=${pageNum + 1}, pageSize=${pageSize})}">&gt;</a>
+                                    </li>
+                                </ul>
+                                <p class="ml-20 line-height-32 h-32p" th:text="'共'+ ${totalPages} +'页'"></p>
+
+                                <p class="ml-20 line-height-32 h-32p">
+                                    第<input name="pageNum" type="text" class="input-group-sm line-height-24" placeholder="" aria-label="" aria-describedby="basic-addon2" style="width: 24px;height: 24px">页
+                                </p>
+                                <button class="btn btn-outline-primary ml-10 btn-sm" type="submit" >确定</button>
+                            </nav>
+                        </form>
                     </section>
                 </div>
             </div>
