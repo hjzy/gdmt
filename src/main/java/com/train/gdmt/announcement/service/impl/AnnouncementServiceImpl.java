@@ -22,17 +22,19 @@ public class AnnouncementServiceImpl implements AnnouncementService {
 
     @Override
     public List<Announcement> findAllAnnouncements() {
+
         return announcementDao.getAllAnnouncement();
     }
 
     @Override
     public int deleteAnnouncements(String announceNum) {
+
         return announcementDao.deleteAnnouncement(announceNum);
     }
 
     @Override
-    public void addAnnouncement(Announcement announcement){
-announcementDao.addAnnouncement(announcement);
- }
+    public void addAnnouncement(Announcement announcement) {
+        announcementDao.addAnnouncement(announcement);
+    }
 
 }

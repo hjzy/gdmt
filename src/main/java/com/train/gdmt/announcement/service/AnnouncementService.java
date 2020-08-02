@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface AnnouncementService {
     Announcement getAnnouncement(String announceNum);
-    List<Announcement> findAllAnnouncements();
+     List<Announcement> findAllAnnouncements();
     int deleteAnnouncements(String announceNum);
     void addAnnouncement(Announcement announcement);
 }
