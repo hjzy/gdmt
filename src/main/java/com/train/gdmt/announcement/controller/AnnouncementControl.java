@@ -76,11 +76,6 @@ public class AnnouncementControl {
         //分页查询
         // List<PurchaseNote> bills = pnService.findAllBills();
         List<Announcement> announcementList = announcementService.findAllAnnouncements();
-//        List<String> sdj1 = new ArrayList<>();
-//
-//        for (Announcement bill:announcementList) {
-//            sdj1.add(crService.findSDJ1(""+bill.getPurchApplyId()));
-//        }
 
         //包装查询结果
         PageInfo pageInfo = new PageInfo(announcementList, 1);
